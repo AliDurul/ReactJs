@@ -20,7 +20,7 @@ npm install || pnpm install || yarn
 
 - https://newsapi.org/
   (Get Key butonuna tiklanarak key alinabilir)
-
+-5aada0fa96ea45268a5bce569f2d5873
 - URL:
   const url = `https://newsapi.org/v2/top-headlines?country=tr&apiKey=${API_KEY}`;
 
