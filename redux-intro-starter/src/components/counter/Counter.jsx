@@ -4,7 +4,7 @@ import {  clear, decrement, increment } from "../../store/counterReducer"
 
 const Counter = () => {
 
-  const count = useSelector((state) => state.count)
+  const {count} = useSelector((state) => state.counterReducer)
   const dispatch = useDispatch()
 
   return (
