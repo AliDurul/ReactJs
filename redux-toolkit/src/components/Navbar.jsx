@@ -9,15 +9,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearUser } from "../features/authSlice";
 
 export default function Navbar() {
-  const {user} = useSelector((state)=> state.auth)
-
   const navigate = useNavigate();
   const dispatch = useDispatch()
+  const { user } = useSelector((state) => state.auth)
 
-const hanldeLogout = () => {
-  dispatch(clearUser())
-  navigate("/login")
-}
+
+  const hanldeLogout = () => {
+    dispatch(clearUser())
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -32,10 +31,10 @@ const hanldeLogout = () => {
             Clarusway News
           </Typography>
 
-        {
-          !user.email ? <Button color="inherit">Login</Button> : <Button color="inherit" onClick={hanldeLogout}>Logut</Button>
-        }
-          
+          {
+            !user.email ? <Button color="inherit">Login</Button> : <Button color="inherit" onClick={hanldeLogout}>Logut</Button>
+          }
+
         </Toolbar>
       </AppBar>
     </Box>

@@ -14,7 +14,9 @@ export const getNews = createAsyncThunk(
         const API_KEY = "5aada0fa96ea45268a5bce569f2d5873"
         const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
         const { data } = await axios(url)
-        console.log(data.articles);
+    console.log(data.articles)
+
+        return data.articles
     }
 )
 
@@ -28,12 +30,9 @@ const newsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(
-                (getNews.pending,
-                    (state) => {
-                        state.loading = true
-                    })
-            )
+            .addCase(getNews.pending, (state) => {
+                state.loading = true
+            })
             .addCase(getNews.fulfilled, (state, action) => {
                 state.news = action.payload
                 state.loading = false
