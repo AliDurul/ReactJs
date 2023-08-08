@@ -8,18 +8,21 @@ const Counter = () => {
     const [amount, setAmount] = useState(0)
 
     const handleReset = () => {
-      setAmount(0)
-      dispatch(reset())
+        setAmount(0)
+        dispatch(reset())
     }
 
 
     return (
-        <section className="center">
+        <section >
             <p>{count}</p>
-            <input type="number" value={amount} onChange={(e)=>setAmount(e.target.value)}/>
             <div>
                 <button onClick={() => dispatch(increment())}>+</button>
                 <button onClick={() => dispatch(decrement())}>-</button>
+            </div>
+
+            <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
+            <div>
                 <button onClick={handleReset}>reset</button>
                 <button onClick={() => dispatch(incrementByAmount(+amount))}>Add Amount</button>
             </div>
