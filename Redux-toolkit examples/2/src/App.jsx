@@ -1,3 +1,6 @@
+import AddPostForm from "./components/AddPostForm"
+import PostsList from "./components/PostsList"
+
 
 
 
@@ -6,7 +9,8 @@ function App() {
 
   return (
     <>
-      <h1>hi</h1>
+    <AddPostForm/>
+    <PostsList/>
     </>
   )
 }
