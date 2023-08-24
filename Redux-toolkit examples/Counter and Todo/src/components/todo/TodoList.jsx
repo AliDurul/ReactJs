@@ -1,16 +1,15 @@
 import { useDispatch, useSelector } from "react-redux"
 import TodoItem from "./TodoItem"
-import { clearTodo } from "../../store/todoReducer"
+import { clearTodo } from "../../features/todoSlice"
 
 const TodoList = () => {
-
-  const { todoList } = useSelector((state) => state.todoReducer)
   const dispatch = useDispatch()
 
-  const handleClearList = () => {
-    dispatch(clearTodo())
-  }
-console.log(todoList.length);
+  const { todoList } = useSelector(state => state.todo)
+
+  const handleClearList = () => dispatch(clearTodo())
+
+
   return (
     <div>
       <div>
@@ -20,11 +19,10 @@ console.log(todoList.length);
       </div>
       <div className="clear-wrapper">
         {
-          todoList.length !== 0 && <button onClick={handleClearList} className="clear-button">
+          todoList.length !== 0 &&  <button onClick={handleClearList} className="clear-button">
             Clear
           </button>
         }
-
       </div>
     </div>
   )
